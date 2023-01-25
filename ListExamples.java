@@ -3,6 +3,15 @@ import java.util.List;
 
 interface StringChecker { boolean checkString(String s); }
 
+class implementedStringChecker implements StringChecker{
+  public boolean checkString(String s) {
+    if(s.length() > 3) {
+      return true;
+    }
+    return false;
+  }
+}
+
 class ListExamples {
 
   // Returns a new list that has all the elements of the input list for which
@@ -12,7 +21,7 @@ class ListExamples {
     List<String> result = new ArrayList<>();
     for(String s: list) {
       if(sc.checkString(s)) {
-        result.add(0, s);
+        result.add(s);
       }
     }
     return result;
