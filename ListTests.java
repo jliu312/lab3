@@ -25,6 +25,23 @@ public class ListTests {
 
     @Test
     public void testMerge(){
+        List<String> testList1 = new ArrayList<>();
+        testList1.add("1"); 
+        testList1.add("3"); 
+        testList1.add("5");
+        List<String> testList2 = new ArrayList<>();
+        testList2.add("2");
+        testList2.add("4");
+        testList2.add("6");
+        
+        List<String> mergedList = ListExamples.merge(testList1, testList2);
 
+        List<String> expectedList = new ArrayList<>();
+        for(int i = 1; i <= 6; i++) expectedList.add("" + i);
+
+        assertEquals(mergedList.size(), expectedList.size());
+        for(int i = 0; i < mergedList.size(); i++) {
+            assertEquals(mergedList.get(i), expectedList.get(i));
+        }
     }
 }
